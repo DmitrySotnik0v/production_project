@@ -1,10 +1,8 @@
-import { Suspense } from "react";
-import { Route, Routes, Link } from "react-router-dom";
-
-import { AboutPage } from "pages/AboutPage";
-import { MainPage } from "pages/MainPage";
+import {  Link } from "react-router-dom";
 
 import { classNames } from "shared/lib/classNames";
+
+import { AppRouter } from "./providers/router";
 
 import { Theme } from "./providers/ThemeProviders/lib/ThemeContext";
 import { useTheme } from "./providers/ThemeProviders/lib/useTheme";
@@ -23,12 +21,7 @@ const App = () => {
       >
         about
       </Link>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter/>
       <button onClick={toggleTheme}>
         {theme === Theme.DARK ? Theme.NORMAl : Theme.DARK}
       </button>
