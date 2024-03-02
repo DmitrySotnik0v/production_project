@@ -8,7 +8,7 @@ import { buildPlugins } from "./buildPlugins";
 import { buildDevSerever } from "./buildDevServer";
 
 export const buildWebpackCondig = (options: BuildOptions): webpack.Configuration => {
-  const { mode, paths,port } = options;
+  const { mode, paths} = options;
   const isDev=mode==='development'
   return {
     mode: mode,
@@ -29,7 +29,7 @@ export const buildWebpackCondig = (options: BuildOptions): webpack.Configuration
       rules: buildLoaders(options),
     },
 
-    resolve: buildResolve(),
+    resolve: buildResolve(options),
     devServer: isDev ? buildDevSerever(options) : undefined
   };
 };

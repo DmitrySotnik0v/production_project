@@ -3,9 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 import webpack from "webpack";
 
-export const buildPlugins = (
-  pathsHTML: string
-): webpack.WebpackPluginInstance[] => [
+export const buildPlugins = (pathsHTML: string): webpack.WebpackPluginInstance[] => [
   new HtmlWebpackPlugin({
     template: pathsHTML,
   }),
