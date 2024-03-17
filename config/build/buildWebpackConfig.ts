@@ -23,7 +23,7 @@ export const buildWebpackCondig = (options: BuildOptions): webpack.Configuration
 
     devtool: isDev ? 'inline-source-map' : undefined,
 
-    plugins: buildPlugins(paths.html),
+    plugins: buildPlugins(options),
 
     module: {
       rules: buildLoaders(options),

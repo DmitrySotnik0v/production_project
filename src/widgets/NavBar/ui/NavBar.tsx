@@ -1,7 +1,4 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
-
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
 import { classNames } from "shared/lib/classNames";
 import { AppLink } from "shared/ui";
@@ -17,7 +14,6 @@ interface NavBar {
 export const NavBar: FC<NavBar> = ({ className }) => {
   return (
     <div className={classNames(style.navbar, {}, [className])}>
-      <ThemeSwitcher/>
       <div className={style.linksWrapper}>
         <AppLink theme={AppLinkTheme.SECONDARY} to={"/"} className={style.mainLink}>
           Main
