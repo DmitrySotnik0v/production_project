@@ -1,22 +1,22 @@
-import webpack from "webpack";
+import webpack from 'webpack';
 
-import { BuildOptions } from "./types/config";
+import { BuildOptions } from './types/config';
 
-import { buildResolve } from "./buildResolve";
-import { buildLoaders } from "./buildLoaders";
-import { buildPlugins } from "./buildPlugins";
-import { buildDevSerever } from "./buildDevServer";
+import { buildResolve } from './buildResolve';
+import { buildLoaders } from './buildLoaders';
+import { buildPlugins } from './buildPlugins';
+import { buildDevSerever } from './buildDevServer';
 
 export const buildWebpackCondig = (options: BuildOptions): webpack.Configuration => {
-  const { mode, paths} = options;
-  const isDev=mode==='development'
+  const { mode, paths } = options;
+  const isDev = mode === 'development';
   return {
-    mode: mode,
+    mode,
 
     entry: paths.entry,
 
     output: {
-      filename: "[name].[contenthash].js",
+      filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
     },
@@ -30,6 +30,6 @@ export const buildWebpackCondig = (options: BuildOptions): webpack.Configuration
     },
 
     resolve: buildResolve(options),
-    devServer: isDev ? buildDevSerever(options) : undefined
+    devServer: isDev ? buildDevSerever(options) : undefined,
   };
 };

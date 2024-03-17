@@ -1,11 +1,11 @@
-import { FC, useState } from "react";
+import { FC, useState } from 'react';
 
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { LangSwitcher } from "widgets/LangSwitcher";
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
 
-import { classNames } from "shared/lib/classNames";
+import { classNames } from 'shared/lib/classNames';
 
-import style from "./SideBar.module.scss";
+import style from './SideBar.module.scss';
 
 interface SideBar {
   className?: string;
@@ -27,7 +27,7 @@ const SideBar: FC<SideBar> = ({ className }) => {
       <button onClick={onToggle}>toggle</button>
       <div className={style.switchersWrapper}>
         <ThemeSwitcher />
-        <LangSwitcher className={style.lang}/>
+        <LangSwitcher className={style.lang} />
       </div>
     </div>
   );
