@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: ['plugin:react/recommended', 'airbnb'],
   parser: '@typescript-eslint/parser',
@@ -12,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -35,6 +36,7 @@ module.exports = {
     'react/button-has-type': 'off',
     'no-redeclare': 'off',
     'react/no-array-index-key': 'warn',
+    'i18next/no-literal-string': ['warn', { markupOnly: true }],
   },
   globals: {
     __IS_DEV__: true,
