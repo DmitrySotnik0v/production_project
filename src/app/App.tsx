@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { classNames } from 'shared/lib/classNames';
 
 import { NavBar } from 'widgets/NavBar';
@@ -11,6 +13,12 @@ import './styles/index.scss';
 
 const App = () => {
   const { theme } = useTheme();
+
+  useEffect(() => {
+    if (Math.random() > 0.5) {
+      throw new Error();
+    }
+  }, []);
 
   return (
 
